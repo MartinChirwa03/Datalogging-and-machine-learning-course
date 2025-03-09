@@ -1,6 +1,7 @@
 # Datalogging-and-machine-learning-course
 This course is designed to teach the basics of Python electronics, data logging and gathering datasets. Once datasets are gathered students can train models on these datasets. 
 
+## Schedule
 
 | Day  | Lecture Topic |
 |------|------------------------------------------------|
@@ -16,6 +17,8 @@ This course is designed to teach the basics of Python electronics, data logging 
 | Wed  | Classification & neural models |
 | Thu  | Data augmentation & scaling |
 | Fri  | Interesting AI topics |
+
+
 | Day  | Lab Content |
 |------|------------------------------------------------|
 | Mon  | Python exercises & problem-solving as a group |
