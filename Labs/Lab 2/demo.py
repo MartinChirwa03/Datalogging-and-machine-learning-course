@@ -2,19 +2,21 @@ from sensors import *
 import board
 
 # try light sensor
-l = light(board.GP0)
+l = light(board.GP27)
 print("Light value=",l.readPin())
 
 # try co2 sensor
-c = co2(board.GP1)
+c = co2(board.GP28)
 print("CO2 value=",l.readPin())
 
 # try sound sensor
-s = sound(board.GP2)
+s = sound(board.GP26)
 print("Sound value=",l.readPin())
 
+del s
+
 # try moisture sensor
-m = moisture(board.GP3)
+m = moisture(board.GP26)
 print("Moist value=",l.readPin())
 
 # try humidity sensor
