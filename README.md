@@ -32,3 +32,7 @@ This course is designed to teach the basics of Python electronics, data logging 
 | Tue  | Classifying datasets & applying it to personal projects |
 | Wed  | Handling various data types & scaling |
 | Thu  | Individual presentations? |
+
+## Credits
+This course was put together by <a href="https://www.linkedin.com/in/dexter-shepherd-1a4a991b8/">Dexter Shepherd</a>, <a href="https://www.linkedin.com/in/alejandra-carriero-a0104b138/">Alejandra Carriero</a>, <a href="https://www.linkedin.com/in/paula-seidler/">Paula Seidler</a>. All PhD students at the university of Sussex.
+
