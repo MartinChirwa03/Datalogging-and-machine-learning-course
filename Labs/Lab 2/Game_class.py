@@ -25,6 +25,12 @@ buttons=[]
 def getButtons():
     ...
 
+def getSequence(size): #generate a random sequence of size 'size'
+    seq=[]
+    for i in range(size):
+        seq.append(random.randint(0,2))
+    return seq
+
 initial_state=getButtons() #get the initial states of the buttons
 points=0
 while True:
@@ -42,7 +48,7 @@ while True:
             #we know a button is pressed because it is different from the resting state
             #we can use the function sum(array) which will add the values in an array
             #if the buttons return 1 for pressed, and 0 for not pressed, sum(pressed) and sum(resting_state) will differ
-            
+
             if ....: # if the button is wrong
                 print("Incorrect")
                 response=True
