@@ -39,6 +39,10 @@ while True:
         ... #gather each button in the user sequence
         #check that the button pressed is the next one in the sequence
         if ...: #if button is pressed
+            #we know a button is pressed because it is different from the resting state
+            #we can use the function sum(array) which will add the values in an array
+            #if the buttons return 1 for pressed, and 0 for not pressed, sum(pressed) and sum(resting_state) will differ
+            
             if ....: # if the button is wrong
                 print("Incorrect")
                 response=True
