@@ -1,7 +1,7 @@
 import board
 import digitalio
 import time
-
+import random
 
 led1 = ...
 led2 = ...
