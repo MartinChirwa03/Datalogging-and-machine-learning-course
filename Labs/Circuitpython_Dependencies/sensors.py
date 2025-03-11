@@ -12,8 +12,9 @@ class analoguesensor:
     def __init__(self,pinNo):
         self.pin = analogio.AnalogIn(pinNo)
     def readPin(self,dt=0.01):
-        (self.pin.value * 3.3) / 65535
+        val=(self.pin.value * 3.3) / 65535
         time.sleep(dt)
+        return val
 
 #classes below to make it pleasing to the user
 class co2(analoguesensor): 
