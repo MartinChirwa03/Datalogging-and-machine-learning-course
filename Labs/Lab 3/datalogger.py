@@ -26,7 +26,7 @@ class datalogger:
         return 0
         #check how much space there is
     def close(self):
-        file.close()
+        self.file.close()
         #close and save the file
 
 #main control
