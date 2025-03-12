@@ -38,23 +38,25 @@ class datalogger:
         #close and save the file
 
 #main control
-if __name__ == "__main__":
+if __name__ == "__main__": #you can ignore this, but this line just means if you are running the local file then run this code
     #setup spi
-    spi = busio.SPI(clock=board.GP2,MOSI=board.GP3,MISO=board.GP4)
+    spi = busio.SPI(clock=board.GP2,MOSI=board.GP3,MISO=board.GP4) 
     cs = board.GP16
     data=datalogger(spi,cs)
 
     #set up record button
     led = digitalio.DigitalInOut(board.GP1)
     button = digitalio.DigitalInOut(board.GP0)
-
+    
+    #set up directions of pins
     led.direction = digitalio.Direction.OUTPUT
     button.direction = digitalio.Direction.INPUT
     button.pull = digitalio.Pull.UP
-
-    filename="mydata"
-    toggle=False
-    recordings=0
+    
+    #variables needed
+    filename="mydata" #the filename
+    toggle=False #toggle to keep track of the button press
+    recordings=0 #the variable to keep track of how many recordsings have been made
 
     l = light(board.GP27) # collect light
     h = humidity(board.GP17)
@@ -64,24 +66,24 @@ if __name__ == "__main__":
         if button.value==0: #when you toggle the button on, it should start recording
             toggle=not toggle
             if toggle: #have the filename change everytime you start a new recording
-                f=filename+str(recordings)+".csv"
+                f=filename+str(recordings)+".csv" #create a unique name for file
                 data.create_file(f) 
                 data.write_data("time,light,humidity,temperature\n") #make keys
             else: #when you toggle the button off, it should stop
                 try:
-                    data.close()
-                    recordings+=1
+                    data.close() #close and save the file
+                    recordings+=1 #increase the number of files so we do not overwrite
                     print("file saves...")
-                except:
+                except: #if there is an error closing the file
                     pass
             time.sleep(0.5)
         led.value=toggle #try adding an LED to show if it is recording or not
         if toggle: #if recording gather all the sensors
             t1=time.monotonic()
-            light_reading=l.readPin()
-            humid=h.getHumidity()
-            temp=h.getTemp()
-            data.write_data(str(time.monotonic()-t1)+","+str(light_reading)+","+str(humid)+","+str(temp)+"\n")
-            print(str(time.monotonic()-t1)+","+str(light_reading)+","+str(humid)+","+str(temp))
+            light_reading=l.readPin() #read analogue sensor
+            humid=h.getHumidity() #read humidity sensor
+            temp=h.getTemp() #read temperature
+            data.write_data(str(time.monotonic()-t1)+","+str(light_reading)+","+str(humid)+","+str(temp)+"\n") #write in csv format
+            print(str(time.monotonic()-t1)+","+str(light_reading)+","+str(humid)+","+str(temp)) #show user
             
         time.sleep(0.1)
