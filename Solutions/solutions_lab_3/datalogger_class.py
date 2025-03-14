@@ -45,8 +45,8 @@ if __name__ == "__main__": #you can ignore this, but this line just means if you
     data=datalogger(spi,cs)
 
     #set up record button
-    led = digitalio.DigitalInOut(board.GP1)
-    button = digitalio.DigitalInOut(board.GP0)
+    led = digitalio.DigitalInOut(board.GP17)
+    button = digitalio.DigitalInOut(board.GP15)
     
     #set up directions of pins
     led.direction = digitalio.Direction.OUTPUT
@@ -59,7 +59,7 @@ if __name__ == "__main__": #you can ignore this, but this line just means if you
     recordings=0 #the variable to keep track of how many recordsings have been made
 
     l = light(board.GP27) # collect light
-    h = humidity(board.GP17)
+    h = humidity(board.GP10)
 
     while True: #use your LED toggle code from yesterdays lab
         led.value=toggle
